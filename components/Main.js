@@ -10,7 +10,12 @@ import {
 import React from 'react';
 import {StyleSheet, Image, View, ScrollView} from 'react-native';
 import img1 from '../assets/1.jpg';
+import { HorizontalCategoryList } from '../container/HorizontalCategoryList';
 import {HorizontalSongList} from '../container/HorizontalSongList';
+import pop from '../assets/genre/pop.jpg';
+import rock from '../assets/genre/rock.jpg';
+import electronic from '../assets/genre/electronic.jpg';
+import classical from '../assets/genre/classical.jpg';
 
 export function Main(props) {
   const trending = [
@@ -20,9 +25,16 @@ export function Main(props) {
     {songTitle: 'Title', source: img1},
     {songTitle: 'Title', source: img1},
   ];
+  const category = [
+    {categoryTitle: 'Pop',source: pop},
+    {categoryTitle: 'Rock',source: rock},
+    {categoryTitle: 'Electronic',source: electronic},
+    {categoryTitle: 'Classical',source: classical},
+  ]
   return (
     <Content >
       <HorizontalSongList title="Trending" songList={trending}/>
+      <HorizontalCategoryList title="Genre" categoryList= {category} />
       <HorizontalSongList title="Latest" songList={trending}/>
     </Content>
   );

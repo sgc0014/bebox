@@ -22,20 +22,24 @@ import { MainSong } from './container/MainSong';
 
 const App = () => {
   return (
-    <Container>
-      {/* <TopNav />
+    <Container style={styles.container}>
+      <TopNav />
       <Main />
       <Songbar />
-      <BottomNav /> */}
-      <MainSong />
+      <BottomNav />
+      {/* <MainSong /> */}
     </Container>
   );
 };
 
 const styles = StyleSheet.create({
+  container:{
+   
+  },
   header: {
     color: '#000',
     fontWeight: '800',
+    backgroundColor:"#fff"
   },
 });
 

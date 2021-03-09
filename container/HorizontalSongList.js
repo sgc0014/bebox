@@ -8,24 +8,24 @@ import {
   Text,
 } from 'native-base';
 import React from 'react';
-import {StyleSheet, FlatList} from 'react-native';
+import {StyleSheet, FlatList, View} from 'react-native';
 
 import {Songcard} from '../components/songCard';
 
 export function HorizontalSongList(props) {
   const {title, songList} = props;
   return (
-    <Content style={styles.horizontalSongListContainer} >
+    <View style={styles.horizontalSongListContainer} >
       <Text style={styles.header}>{title}</Text>
       <FlatList
         horizontal
         data={songList}
         renderItem={({item}) => (
-          <Songcard songTitle={item.songTitle} imgSrc={item.source} />
+          <Songcard  songTitle={item.songTitle} imgSrc={item.source} />
         )}
          keyExtractor={(item, index) => index.toString()}
       />
-    </Content>
+    </View>
   );
 }
 

@@ -1,20 +1,25 @@
-import {Card, CardItem, Text} from 'native-base';
+import {Card, CardItem, Text,Button} from 'native-base';
 import React from 'react';
-import {StyleSheet, Image} from 'react-native';
+import {StyleSheet, Image, View} from 'react-native';
 
 export function Songcard(props) {
   const {songTitle, imgSrc} = props;
   return (
+   
     <Card style={styles.card}>
-      <CardItem cardBody>
+      <CardItem button cardBody onPress={() => {alert("hrlo")}}>
         <Image source={imgSrc} style={styles.img} />
       </CardItem>
-      <CardItem>
+      <CardItem button cardBody onPress={() => {}}>
         <Text style={styles.cardTitle}>{songTitle}</Text>
       </CardItem>
     </Card>
+
   );
 }
+
+
+
 
 const styles = StyleSheet.create({
   card: {
@@ -27,4 +32,5 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 118,
   },
+ 
 });
