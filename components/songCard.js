@@ -3,14 +3,14 @@ import React from 'react';
 import {StyleSheet, Image, View} from 'react-native';
 
 export function Songcard(props) {
-  const {songTitle, imgSrc} = props;
+  const {songTitle, imgSrc,navigation} = props;
   return (
    
     <Card style={styles.card}>
       <CardItem button cardBody onPress={() => {alert("hrlo")}}>
         <Image source={imgSrc} style={styles.img} />
       </CardItem>
-      <CardItem button cardBody onPress={() => {}}>
+      <CardItem button cardBody onPress={() => {navigation.navigate('Song')}}>
         <Text style={styles.cardTitle}>{songTitle}</Text>
       </CardItem>
     </Card>
@@ -21,7 +21,7 @@ export function Songcard(props) {
 
 
 
-const styles = StyleSheet.create({
+const styles =  StyleSheet.create({
   card: {
     width: 210,
     height: 168,

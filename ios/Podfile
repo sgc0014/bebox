@@ -14,7 +14,15 @@ target 'bebox' do
 
   pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
 
-  pod 'RNSVG', :path => '../node_modules/react-native-svg'
+
+  pod 'react-native-safe-area-context', :path => '../node_modules/react-native-safe-area-context'
+
+  pod 'BVLinearGradient', :path => '../node_modules/react-native-linear-gradient'
+
+  pod 'react-native-track-player', :path => '../node_modules/react-native-track-player'
+
+
+  pod 'RNMediaLibrary', :path => '../node_modules/react-native-media-library'
 
   target 'beboxTests' do
     inherit! :complete

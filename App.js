@@ -1,46 +1,23 @@
 import React from 'react';
-import {ScrollView, StyleSheet} from 'react-native';
-import TopNav from './components/topNav';
-import {
-  Container,
-  Header,
-  Title,
-  Content,
-  Footer,
-  FooterTab,
-  Button,
-  Left,
-  Right,
-  Body,
-  Icon,
-  Text,
-} from 'native-base';
-import BottomNav from './components/BottomNav';
-import {Main} from './components/Main';
-import { Songbar } from './components/songBar';
-import { MainSong } from './container/MainSong';
+import Layout from './components/Layout';
+import {createStackNavigator} from '@react-navigation/stack';
+import {HomeScreen} from './screens/HomeScreen';
+import {SongScreen} from './screens/SongScreen';
+import {SearchListScreen} from './screens/SearchListScreen';
+import {OpeningScreen} from './screens/OpeningScreen';
+import { DownloadedScreen } from './screens/DownloadedScreen';
 
+const Stack = createStackNavigator();
 const App = () => {
   return (
-    <Container style={styles.container}>
-      <TopNav />
-      <Main />
-      <Songbar />
-      <BottomNav />
-      {/* <MainSong /> */}
-    </Container>
+    <Stack.Navigator screenOptions={{headerShown: false}}>
+      <Stack.Screen name="Downloaded" component={DownloadedScreen} />
+      <Stack.Screen name="Opening" component={OpeningScreen} />
+      <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Screen name="Song" component={SongScreen} />
+      <Stack.Screen name="Search" component={SearchListScreen} />
+    </Stack.Navigator>
   );
 };
-
-const styles = StyleSheet.create({
-  container:{
-   
-  },
-  header: {
-    color: '#000',
-    fontWeight: '800',
-    backgroundColor:"#fff"
-  },
-});
 
 export default App;
